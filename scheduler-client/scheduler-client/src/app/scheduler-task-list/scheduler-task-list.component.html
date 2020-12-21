@@ -1,0 +1,25 @@
+<div [ngStyle]="{'max-width': '70%', 'margin': 'auto'}" class="card my-5">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Recurrency</th>
+            <th scope="col">Code</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let task of tasks">
+            <td>{{ task.id }}</td>
+            <td>{{ task.name }}</td>
+            <td>{{ task.recurrency }}</td>
+            <td>{{ task.code }}</td>
+            <td><button (click)="deleteTask(task, task.id)" class="btn btn-danger">Delete</button>
+            <button (click)="updateTask(task.id)" class="btn btn-primary" style="margin-left: 10px">Update</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
